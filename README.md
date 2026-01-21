@@ -404,7 +404,3 @@ Este repositório contém apenas configurações pessoais. Sinta-se livre para u
 ## 🤝 Contribuições
 
 Sugestões e melhorias são bem-vindas! Sinta-se à vontade para abrir uma issue ou pull request.
-
----
-
-**Desenvolvido com ❤️ para uma experiência de terminal mais produtiva**
