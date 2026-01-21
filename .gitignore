@@ -1,0 +1,16 @@
+# Arquivos temporários
+*.tmp
+*.swp
+*.swo
+*~
+
+# Arquivos do macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Arquivos de cache
+*.cache
+
+# Arquivos de log
+*.log
