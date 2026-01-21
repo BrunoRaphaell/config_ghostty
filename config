@@ -1,0 +1,60 @@
+# ---------------------------------------------------------
+# TIPOGRAFIA
+# ---------------------------------------------------------
+font-family = "JetBrainsMono Nerd Font"
+font-size = 25
+
+# ---------------------------------------------------------
+# APARÊNCIA & TEMA
+# ---------------------------------------------------------
+theme = Catppuccin Mocha
+background-opacity = 0.8
+background-blur = 90
+window-colorspace = "display-p3"
+
+# ---------------------------------------------------------
+# GEOMETRIA & LAYOUT DA JANELA
+# ---------------------------------------------------------
+window-width = 90
+window-height = 25
+window-padding-x = 10
+window-padding-y = 10
+window-padding-balance = true
+
+# ---------------------------------------------------------
+# COMPORTAMENTO & ESTADO
+# ---------------------------------------------------------
+maximize = true
+window-save-state = always
+copy-on-select = clipboard
+confirm-close-surface = true
+
+# ---------------------------------------------------------
+# KEYBINDINGS (ATALHOS)
+# ---------------------------------------------------------
+
+# Divisão de Tela (Splits) - Ideal para monitorar logs/recursos
+keybind = super+d=new_split:right
+keybind = super+shift+d=new_split:down
+
+# Navegação entre Splits (estilo Vim/Setas)
+keybind = super+ctrl+h=goto_split:left
+keybind = super+ctrl+l=goto_split:right
+keybind = super+ctrl+k=goto_split:top
+keybind = super+ctrl+j=goto_split:bottom
+
+# Gerenciamento de Abas
+keybind = super+t=new_tab
+keybind = super+w=close_surface
+keybind = super+alt+right=next_tab
+keybind = super+alt+left=previous_tab
+
+# Utilidades
+keybind = super+r=reload_config
+keybind = super+ctrl+f=toggle_fullscreen
+
+# Atalho global para abrir o Ghostty de qualquer lugar
+keybind = global:cmd+escape=toggle_quick_terminal
+quick-terminal-position = top
+quick-terminal-animation-duration = 0.2
+
