@@ -392,8 +392,8 @@ E certifique-se de que estão listados no array `plugins` do `.zshrc`.
 ## 📚 Recursos Adicionais
 
 - [Documentação do Ghostty](https://ghostty.org/docs)
-- [Documentação do Atuin](https://atuin.sh/docs)
-- [Documentação do Yazi](https://yazi-rs.github.io/docs)
+- [Documentação do Atuin](https://docs.atuin.sh/cli/guide/import/)
+- [Documentação do Yazi](https://yazi-rs.github.io/docs/installation)
 - [Oh My Zsh](https://ohmyz.sh/)
 - [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
 
