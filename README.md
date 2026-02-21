@@ -216,7 +216,10 @@ y /path    # Opens Yazi in a specific directory
 
 ### 8. Install Mole
 
+![image-mole](images/mole.png)
+
 [Mole](https://github.com/tw93/mole) is a CLI tool for deep cleaning and optimizing your Mac.
+
 
 ```bash
 brew install mole
