@@ -1,82 +1,82 @@
-# 🎨 Configurações do Terminal Ghostty
+# Ghostty Terminal Configuration
 
-Este repositório contém minhas configurações personalizadas para o terminal [Ghostty](https://github.com/ghostty-org/ghostty), incluindo integração com [Atuin](https://github.com/atuinsh/atuin) para histórico de comandos e [Yazi](https://github.com/sxyazi/yazi) como gerenciador de arquivos.
+This repository contains my custom configuration for the [Ghostty](https://github.com/ghostty-org/ghostty) terminal, including integration with [Atuin](https://github.com/atuinsh/atuin) for command history and [Yazi](https://github.com/sxyazi/yazi) as a file manager.
 
-## 📸 Preview
+## Preview
 
 ![ghostty](images/imagem_ghostty.png)
 
-### Terminal Ghostty em Ação
+### Ghostty Terminal in Action
 
-O terminal configurado com tema Catppuccin Mocha, fonte JetBrains Mono Nerd Font e transparência/blur para um visual moderno.
+The terminal configured with the Catppuccin Mocha theme, JetBrains Mono Nerd Font, and transparency/blur for a modern look.
 
-### Atuin - Histórico de Comandos Inteligente
+### Atuin - Smart Command History
 
 ![Atuin](images/atuin.png)
 
-O Atuin permite buscar e navegar pelo histórico de comandos de forma eficiente, com busca semântica e estatísticas de execução.
+Atuin lets you search and navigate through command history efficiently, with semantic search and execution statistics.
 
-### Yazi - Gerenciador de Arquivos
+### Yazi - File Manager
 
 ![Yazi](images/yazi.png)
 
-Yazi oferece uma experiência moderna de navegação de arquivos diretamente no terminal, com preview e navegação intuitiva.
+Yazi offers a modern file browsing experience directly in the terminal, with preview and intuitive navigation.
 
-### Terminal Suspenso (Cmd+Esc)
+### Dropdown Terminal (Cmd+Esc)
 
-![Terminal Suspenso](images/terminal_suspenso.png)
+![Dropdown Terminal](images/terminal_suspenso.png)
 
-Atalho global `Cmd+Esc` para abrir/fechar o terminal rapidamente de qualquer aplicação.
+Global shortcut `Cmd+Esc` to quickly open/close the terminal from any application.
 
-## 🚀 Instalação
+## Installation
 
-### Pré-requisitos
+### Prerequisites
 
-- macOS (testado no macOS Sonoma/Ventura)
-- Homebrew instalado
-- Git instalado
+- macOS (tested on macOS Sonoma/Ventura)
+- Homebrew installed
+- Git installed
 
-### 1. Instalar o Ghostty
+### 1. Install Ghostty
 
 ```bash
 brew install --cask ghostty
 ```
 
-### 2. Instalar Zsh e Oh My Zsh
+### 2. Install Zsh and Oh My Zsh
 
-#### Instalar Zsh
+#### Install Zsh
 
-O Zsh geralmente já vem pré-instalado no macOS. Para verificar:
+Zsh usually comes pre-installed on macOS. To verify:
 
 ```bash
 zsh --version
 ```
 
-Se não estiver instalado ou quiser atualizar:
+If it's not installed or you want to update:
 
 ```bash
 brew install zsh
 ```
 
-#### Instalar Oh My Zsh
+#### Install Oh My Zsh
 
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-### 3. Instalar Powerlevel10k (Tema)
+### 3. Install Powerlevel10k (Theme)
 
 ```bash
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 
-Depois, adicione ao seu `~/.zshrc`:
+Then add to your `~/.zshrc`:
 
 ```zsh
 source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 ```
 
-### 4. Instalar Plugins do Zsh
+### 4. Install Zsh Plugins
 
 #### zsh-syntax-highlighting
 
@@ -96,13 +96,13 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone https://github.com/zsh-users/zsh-history-substring-search ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search
 ```
 
-#### Outros plugins
+#### Other plugins
 
-Os plugins `z`, `sudo`, `web-search` e `copypath` já vêm incluídos com o Oh My Zsh.
+The `z`, `sudo`, `web-search`, and `copypath` plugins are already included with Oh My Zsh.
 
-### 5. Configurar o .zshrc
+### 5. Configure .zshrc
 
-Copie o conteúdo do arquivo `.zshrc` fornecido ou adicione as seguintes configurações:
+Copy the contents of the provided `.zshrc` file or add the following configuration:
 
 ```zsh
 plugins=(
@@ -124,47 +124,47 @@ bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
 ```
 
-### 6. Instalar e Configurar o Atuin
+### 6. Install and Configure Atuin
 
-#### Instalação
+#### Installation
 
 ```bash
 brew install atuin
 ```
 
-Também pode ser instalado com o comando, conforme a [documentação do Atuin](https://docs.atuin.sh/cli/guide/installation/#__tabbed_1_2):
+It can also be installed with the following command, as described in the [Atuin documentation](https://docs.atuin.sh/cli/guide/installation/#__tabbed_1_2):
 ```bash
 curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
 ```
 
 
-#### Configuração no .zshrc
+#### .zshrc Configuration
 
-Adicione ao final do seu `~/.zshrc`:
+Add to the end of your `~/.zshrc`:
 
 ```zsh
 . "$HOME/.atuin/bin/env"
 eval "$(atuin init zsh)"
 ```
 
-#### Sincronização (Opcional)
+#### Sync (Optional)
 
-Para sincronizar seu histórico entre dispositivos:
+To sync your history across devices:
 
 ```bash
-atuin register -u <seu-usuario>
-atuin login -u <seu-usuario>
+atuin register -u <your-username>
+atuin login -u <your-username>
 ```
 
-E para sincronizar seu histórico com o que já foi executado no terminal:
+And to sync your history with previously executed commands:
 
 ```bash
 atuin import auto
 ```
 
-### 7. Instalar e Configurar o Yazi
+### 7. Install and Configure Yazi
 
-#### Instalação
+#### Installation
 
 **1. Update brew:**
 
@@ -172,19 +172,19 @@ atuin import auto
 brew update
 ```
 
-**2. Instalar dependências:**
+**2. Install dependencies:**
 ```bash
 brew install yazi ffmpeg sevenzip jq poppler fd ripgrep fzf zoxide resvg imagemagick font-symbols-only-nerd-font
 ```
 
-**3. Instalar Yazi:**
+**3. Install Yazi:**
 ```bash
 brew install yazi
 ```
 
-#### Função Personalizada no .zshrc
+#### Custom Function in .zshrc
 
-Adicione esta função ao seu `~/.zshrc` para permitir que o Yazi mude o diretório atual após fechar:
+Add this function to your `~/.zshrc` to allow Yazi to change the current directory after closing:
 
 ```zsh
 function y() {
@@ -197,210 +197,210 @@ function y() {
 }
 ```
 
-**Como funciona:**
-- Cria um arquivo temporário para armazenar o diretório atual
-- Abre o Yazi com o arquivo temporário como referência
-- Quando você fecha o Yazi, ele salva o diretório selecionado no arquivo temporário
-- A função lê esse arquivo e muda para o diretório selecionado
-- Remove o arquivo temporário após o uso
+**How it works:**
+- Creates a temporary file to store the current directory
+- Opens Yazi with the temporary file as a reference
+- When you close Yazi, it saves the selected directory to the temporary file
+- The function reads that file and changes to the selected directory
+- Removes the temporary file after use
 
-**Uso:**
+**Usage:**
 ```bash
-y          # Abre Yazi no diretório atual
-y /path    # Abre Yazi em um diretório específico
+y          # Opens Yazi in the current directory
+y /path    # Opens Yazi in a specific directory
 ```
 
-### 8. Configurar o Ghostty
+### 8. Configure Ghostty
 
-Copie o arquivo `config` para o diretório de configuração do Ghostty:
+Copy the `config` file to the Ghostty configuration directory:
 
 ```bash
 mkdir -p "$HOME/Library/Application Support/com.mitchellh.ghostty"
 cp config "$HOME/Library/Application Support/com.mitchellh.ghostty/config"
 ```
 
-Ou clone este repositório e faça um symlink:
+Or clone this repository and create a symlink:
 
 ```bash
-git clone <seu-repositorio> ~/.config/ghostty
+git clone <your-repository> ~/.config/ghostty
 ln -s ~/.config/ghostty/config "$HOME/Library/Application Support/com.mitchellh.ghostty/config"
 ```
 
-### 9. Instalar Fontes Nerd Fonts
+### 9. Install Nerd Fonts
 
-O tema requer uma fonte Nerd Font. Instale a [JetBrains Mono Nerd Font](https://formulae.brew.sh/cask/font-jetbrains-mono-nerd-font):
+The theme requires a Nerd Font. Install [JetBrains Mono Nerd Font](https://formulae.brew.sh/cask/font-jetbrains-mono-nerd-font):
 
 ```bash
 brew install --cask font-jetbrains-mono-nerd-font
 ```
 
-## ⌨️ Atalhos de Teclado
+## Keyboard Shortcuts
 
-### Atalhos Globais do Ghostty
+### Ghostty Global Shortcuts
 
-| Atalho | Ação |
-|--------|------|
-| `Cmd + Esc` | Abre/fecha o terminal suspenso (quick terminal) |
+| Shortcut | Action |
+|----------|--------|
+| `Cmd + Esc` | Opens/closes the dropdown terminal (quick terminal) |
 
-### Atalhos do Terminal Ghostty
+### Ghostty Terminal Shortcuts
 
-#### Divisão de Tela (Splits)
+#### Split Screen (Splits)
 
-| Atalho | Ação |
-|--------|------|
-| `Super + D` | Cria um split vertical (direita) |
-| `Super + Shift + D` | Cria um split horizontal (baixo) |
-| `Super + Ctrl + H` | Move para o split à esquerda |
-| `Super + Ctrl + L` | Move para o split à direita |
-| `Super + Ctrl + K` | Move para o split acima |
-| `Super + Ctrl + J` | Move para o split abaixo |
+| Shortcut | Action |
+|----------|--------|
+| `Super + D` | Creates a vertical split (right) |
+| `Super + Shift + D` | Creates a horizontal split (bottom) |
+| `Super + Ctrl + H` | Moves to the left split |
+| `Super + Ctrl + L` | Moves to the right split |
+| `Super + Ctrl + K` | Moves to the split above |
+| `Super + Ctrl + J` | Moves to the split below |
 
-#### Gerenciamento de Abas
+#### Tab Management
 
-| Atalho | Ação |
-|--------|------|
-| `Super + T` | Cria uma nova aba |
-| `Super + W` | Fecha a superfície atual (split/aba) |
-| `Super + Alt + →` | Próxima aba |
-| `Super + Alt + ←` | Aba anterior |
+| Shortcut | Action |
+|----------|--------|
+| `Super + T` | Creates a new tab |
+| `Super + W` | Closes the current surface (split/tab) |
+| `Super + Alt + Right Arrow` | Next tab |
+| `Super + Alt + Left Arrow` | Previous tab |
 
-#### Utilidades
+#### Utilities
 
-| Atalho | Ação |
-|--------|------|
-| `Super + R` | Recarrega a configuração |
-| `Super + Ctrl + F` | Alterna tela cheia |
+| Shortcut | Action |
+|----------|--------|
+| `Super + R` | Reloads the configuration |
+| `Super + Ctrl + F` | Toggles fullscreen |
 
-**Nota:** `Super` refere-se à tecla `Cmd` (⌘) no macOS.
+**Note:** `Super` refers to the `Cmd` key on macOS.
 
-### Atalhos do Zsh (Histórico)
+### Zsh Shortcuts (History)
 
-| Atalho | Ação |
-|--------|------|
-| `↑` (Seta para cima) | Busca no histórico (substring search) |
-| `↓` (Seta para baixo) | Busca reversa no histórico |
+| Shortcut | Action |
+|----------|--------|
+| `Up Arrow` | Search history (substring search) |
+| `Down Arrow` | Reverse history search |
 
-### Atalhos do Atuin
+### Atuin Shortcuts
 
-| Atalho | Ação |
-|--------|------|
-| `Ctrl + R` | Abre o Atuin para busca no histórico |
-| `Esc` | Fecha o Atuin |
-| `Tab` | Edita o comando selecionado |
-| `Enter` | Executa o comando selecionado |
-| `Ctrl + O` | Inspeciona o histórico |
+| Shortcut | Action |
+|----------|--------|
+| `Ctrl + R` | Opens Atuin for history search |
+| `Esc` | Closes Atuin |
+| `Tab` | Edits the selected command |
+| `Enter` | Executes the selected command |
+| `Ctrl + O` | Inspects the history |
 
-## 🛠️ Script de Atualização do macOS
+## macOS Update Script
 
-O repositório inclui um script útil para atualizar o sistema e pacotes do Homebrew.
+The repository includes a useful script to update the system and Homebrew packages.
 
-### Instalação do Script
+### Script Installation
 
-1. Certifique-se de que o script está executável:
+1. Make sure the script is executable:
 
 ```bash
 chmod +x /Users/balvesdematos/Documents/script/update_mac.sh
 ```
 
-2. O alias já está configurado no `.zshrc`:
+2. The alias is already configured in `.zshrc`:
 
 ```zsh
 alias update="/Users/balvesdematos/Documents/script/update_mac.sh"
 ```
 
-### Uso
+### Usage
 
-Simplesmente execute:
+Simply run:
 
 ```bash
 update
 ```
 
-O script irá:
-- Verificar atualizações do Homebrew
-- Verificar atualizações do macOS
-- Perguntar se deseja instalar as atualizações
-- Executar as atualizações conforme sua escolha
+The script will:
+- Check for Homebrew updates
+- Check for macOS updates
+- Ask if you want to install the updates
+- Run the updates according to your choice
 
-## 🎨 Personalização
+## Customization
 
-### Tema
+### Theme
 
-O tema atual é **Catppuccin Mocha**. Para alterar, edite a linha no arquivo `config`:
+The current theme is **Catppuccin Mocha**. To change it, edit the following line in the `config` file:
 
 ```ini
 theme = Catppuccin Mocha
 ```
 
-Outros temas disponíveis podem ser encontrados na [documentação do Ghostty](https://ghostty.org/docs/themes).
+Other available themes can be found in the [Ghostty documentation](https://ghostty.org/docs/themes).
 
-### Fonte
+### Font
 
-A fonte padrão é **JetBrains Mono Nerd Font**. Para alterar:
+The default font is **JetBrains Mono Nerd Font**. To change it:
 
 ```ini
-font-family = "Sua Fonte Nerd Font"
+font-family = "Your Nerd Font"
 font-size = 25
 ```
 
-### Transparência e Blur
+### Transparency and Blur
 
-Ajuste a opacidade e blur no arquivo `config`:
+Adjust opacity and blur in the `config` file:
 
 ```ini
-background-opacity = 0.8  # 0.0 (transparente) a 1.0 (opaco)
-background-blur = 90       # Intensidade do blur
+background-opacity = 0.8  # 0.0 (transparent) to 1.0 (opaque)
+background-blur = 90       # Blur intensity
 ```
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
-### O terminal não abre com Cmd+Esc
+### The terminal doesn't open with Cmd+Esc
 
-Certifique-se de que o Ghostty tem permissões de acessibilidade:
-1. Vá em **Preferências do Sistema > Privacidade e Segurança > Acessibilidade**
-2. Adicione o Ghostty à lista de aplicativos permitidos
+Make sure Ghostty has accessibility permissions:
+1. Go to **System Settings > Privacy & Security > Accessibility**
+2. Add Ghostty to the list of allowed applications
 
-### Atuin não está funcionando
+### Atuin is not working
 
-Verifique se o Atuin está instalado e inicializado:
+Check that Atuin is installed and initialized:
 
 ```bash
 atuin --version
 atuin info
 ```
 
-Se necessário, reinicialize o shell:
+If necessary, reinitialize the shell:
 
 ```bash
 exec zsh
 ```
 
-### Yazi não muda o diretório
+### Yazi doesn't change the directory
 
-Certifique-se de que a função `y()` está no seu `.zshrc` e que você está usando `y` e não `yazi` diretamente.
+Make sure the `y()` function is in your `.zshrc` and that you're using `y` instead of `yazi` directly.
 
-### Plugins do Zsh não funcionam
+### Zsh plugins aren't working
 
-Verifique se os plugins estão instalados nos diretórios corretos:
+Check that the plugins are installed in the correct directories:
 
 ```bash
 ls ~/.oh-my-zsh/custom/plugins/
 ```
 
-E certifique-se de que estão listados no array `plugins` do `.zshrc`.
+And make sure they're listed in the `plugins` array in `.zshrc`.
 
-## 📚 Recursos Adicionais
+## Additional Resources
 
-- [Documentação do Ghostty](https://ghostty.org/docs)
-- [Documentação do Atuin](https://docs.atuin.sh/cli/guide/import/)
-- [Documentação do Yazi](https://yazi-rs.github.io/docs/installation)
+- [Ghostty Documentation](https://ghostty.org/docs)
+- [Atuin Documentation](https://docs.atuin.sh/cli/guide/import/)
+- [Yazi Documentation](https://yazi-rs.github.io/docs/installation)
 - [Oh My Zsh](https://ohmyz.sh/)
 - [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
 
-## 📝 Licença
+## License
 
-Este repositório contém apenas configurações pessoais. Sinta-se livre para usar e adaptar conforme suas necessidades.
+This repository contains only personal configurations. Feel free to use and adapt them to your needs.
 
-## 🤝 Contribuições
+## Contributing
 
-Sugestões e melhorias são bem-vindas! Sinta-se à vontade para abrir uma issue ou pull request.
+Suggestions and improvements are welcome! Feel free to open an issue or pull request.
