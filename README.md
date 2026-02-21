@@ -1,6 +1,6 @@
 # Ghostty Terminal Configuration
 
-This repository contains my custom configuration for the [Ghostty](https://github.com/ghostty-org/ghostty) terminal, including integration with [Atuin](https://github.com/atuinsh/atuin) for command history and [Yazi](https://github.com/sxyazi/yazi) as a file manager.
+This repository contains my custom configuration for the [Ghostty](https://github.com/ghostty-org/ghostty) terminal, including integration with [Atuin](https://github.com/atuinsh/atuin) for command history, [Yazi](https://github.com/sxyazi/yazi) as a file manager, and [Mole](https://github.com/tw93/mole) for Mac cleaning and optimization.
 
 ## Preview
 
@@ -21,6 +21,10 @@ Atuin lets you search and navigate through command history efficiently, with sem
 ![Yazi](images/yazi.png)
 
 Yazi offers a modern file browsing experience directly in the terminal, with preview and intuitive navigation.
+
+### Mole - Mac Cleaning and Optimization
+
+[Mole](https://github.com/tw93/mole) is a CLI tool to deep clean and optimize your Mac, featuring system cleanup, smart app uninstalling, disk space analysis, live system monitoring, and project artifact cleanup.
 
 ### Dropdown Terminal (Cmd+Esc)
 
@@ -210,7 +214,35 @@ y          # Opens Yazi in the current directory
 y /path    # Opens Yazi in a specific directory
 ```
 
-### 8. Configure Ghostty
+### 8. Install Mole
+
+[Mole](https://github.com/tw93/mole) is a CLI tool for deep cleaning and optimizing your Mac.
+
+```bash
+brew install mole
+```
+
+It can also be installed via the install script:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/tw93/mole/main/install.sh | bash
+```
+
+**Key features:**
+- Deep system cleanup (caches, logs, browser data)
+- Smart app uninstaller with thorough removal of associated files
+- System optimization (rebuilds databases, clears caches, refreshes services)
+- Disk space analysis and large file identification
+- Live system monitoring (CPU, memory, disk, network)
+- Project artifact cleanup (node_modules, target, venv, etc.)
+
+**Usage:**
+
+```bash
+mole
+```
+
+### 9. Configure Ghostty
 
 Copy the `config` file to the Ghostty configuration directory:
 
@@ -226,7 +258,7 @@ git clone <your-repository> ~/.config/ghostty
 ln -s ~/.config/ghostty/config "$HOME/Library/Application Support/com.mitchellh.ghostty/config"
 ```
 
-### 9. Install Nerd Fonts
+### 10. Install Nerd Fonts
 
 The theme requires a Nerd Font. Install [JetBrains Mono Nerd Font](https://formulae.brew.sh/cask/font-jetbrains-mono-nerd-font):
 
@@ -394,6 +426,7 @@ And make sure they're listed in the `plugins` array in `.zshrc`.
 - [Ghostty Documentation](https://ghostty.org/docs)
 - [Atuin Documentation](https://docs.atuin.sh/cli/guide/import/)
 - [Yazi Documentation](https://yazi-rs.github.io/docs/installation)
+- [Mole](https://github.com/tw93/mole)
 - [Oh My Zsh](https://ohmyz.sh/)
 - [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
 
